@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplier Game</title>
+</head>
+<body>
+    <h1>The Multiplier Game</h1>
+    <p>Test your multiplication skills...</p>
+    <div id="divGameLevel">
+    <form id="frmGameLevel">
+        <input type="radio" name="gameLevel" value="1" id="L1">
+            <label for="L1">Level 1 - first number between 1 & 10, second number between 1 & 12</label><br>
+        <input type="radio" name="gameLevel" value="2" id="L2">
+            <label for="L2">Level 2 - first number between 1 & 10, second number between 10 & 20</label><br>
+        <input type="radio" name="gameLevel" value="3" id="L3">
+            <label for="L3">Level 3 - first number between 1 & 10, second number between 10 & 100</label><br>
+        <input type="radio" name="gameLevel" value="4" id="L4">
+            <label for="L4">Level 4  - both numbers between 10 & 20</label><br>
+                    
+    </form>
+    </div>
+
+
+    <div>
+        <p id="timer"> <!-- INNER HTML -->  </p> 
+    </div>
+
+    <div>
+        <p id="level"> <!-- INNER HTML -->  </p>
+     </div>
+
+    <div {style="margin: 1em;"} id="tableDiv">
+            <p id="question">
+                <!-- JS INNER HTML GOES HERE-->
+            </p>
+            <div>
+                <table border="0.5">
+                    <tr>
+                        <td colspan="2" height= "10" id="colorFlash"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" id="tallyHeading">Correct</td>
+                        <td align="center" id="totCountHeading" >Total</td>
+                    </tr>
+                    <tr>
+                        <td align="center"  id="tally"> </td>
+                        <td align="center"  id="totCount"> </td>
+                    </tr>
+                </table>
+            </div>
+
+    </div>
+
+    <div>
+    <p><button id="reloadPage">Start New Game</button></p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
