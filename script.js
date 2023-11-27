@@ -8,8 +8,11 @@ let varLevelForm = document.getElementById("frmGameLevel");
 varLevelForm.addEventListener("click", (e) => {
   e.preventDefault();
   gameLevel = document.querySelector('input[name = "gameLevel"]:checked').value;
+  // Hide the pick level DIV after a level was selected
   document.getElementById("divGameLevel").style.display = 'none';
+  // Start the timer
   timer();
+  // Play the game
   playGame(gameLevel);
     })
 
@@ -77,13 +80,22 @@ function genProblem(firstNumber, secondNumber, levelDesc){
     solution = firstNumber * secondNumber;
     probCount++;
     document.getElementById("level").innerHTML=`${levelDesc}`;
-    console.log(`Level info:\n${levelDesc}, Problem Count: ${probCount}. `);
-    console.log(`Generated problem: ${firstNumber} x ${secondNumber} = ${solution} `);
 } // END genProblem()
 
 // Function to display a problem and call chkAnswer()
 function displayProblem(firstNumber, secondNumber) {
     document.getElementById("question").innerHTML=`${firstNumber} * ${secondNumber} = <input type="number" placeholder="0" style="width: 5em" id="inpAnswer"> <button onclick="chkAnswer()")>Go</button>`;
+
+// Add an event listener for the "keydown" event
+    let varAnsForm = document.getElementById("inpAnswer"); 
+    varAnsForm.addEventListener("keydown", function(event) {
+        // Check if the pressed key is Enter
+        if (event.key === "Enter" || event.keyCode === 13) {
+        chkAnswer();
+        console.log("Enter key pressed!");
+        } 
+    }); // END 'keydown" listener
+
 } // END displayProblem()
 
 // Function to check the answer and move onto next question
