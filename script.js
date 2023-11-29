@@ -22,6 +22,7 @@ function playGame(gameLevel){
     document.getElementById("colorFlash").style.backgroundColor = "white";
     document.getElementById("totCountHeading").style.backgroundColor = "white";
 
+
     // Generate 2 random numbers
     ranNumbers(gameLevel);
 
@@ -86,8 +87,9 @@ function genProblem(firstNumber, secondNumber, levelDesc){
 function displayProblem(firstNumber, secondNumber) {
     document.getElementById("question").innerHTML=`${firstNumber} * ${secondNumber} = <input type="number" placeholder="0" style="width: 5em" id="inpAnswer"> <button onclick="chkAnswer()")>Go</button>`;
 
-// Add an event listener for the "keydown" event
+// Add an event listener for the "keydown" event & set focus to the answer box
     let varAnsForm = document.getElementById("inpAnswer"); 
+    varAnsForm.focus();
     varAnsForm.addEventListener("keydown", function(event) {
         // Check if the pressed key is Enter
         if (event.key === "Enter" || event.keyCode === 13) {
